@@ -56,14 +56,15 @@ class AdminPanelProvider extends PanelProvider
                 Authenticate::class,
             ])
             ->plugins([
-                FilamentLaravelLogPlugin::make()
+                FilamentLaravelLogPlugin::make(),
             ])
             ->navigationGroups([
+                'Reporting',
                 'Admin',
                 'System',
             ])
             ->resources([
-                config('filament-logger.activity_resource')
+                config('filament-logger.activity_resource'),
             ]);
     }
 }

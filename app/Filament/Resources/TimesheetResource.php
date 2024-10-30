@@ -2,22 +2,20 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\CompanyResource\Pages;
-use App\Models\Company;
+use App\Filament\Resources\TimesheetResource\Pages;
+use App\Models\Timesheet;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
 
-class CompanyResource extends Resource
+class TimesheetResource extends Resource
 {
-    protected static ?string $model = Company::class;
+    protected static ?string $model = Timesheet::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-building-office-2';
+    protected static ?string $navigationIcon = 'heroicon-o-clock';
 
-    protected static ?string $navigationGroup = 'Admin';
-
-    protected static ?string $recordTitleAttribute = 'name';
+    public static ?string $label = 'My Timesheets';
 
     public static function form(Form $form): Form
     {
@@ -56,9 +54,9 @@ class CompanyResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListCompanies::route('/'),
-            'create' => Pages\CreateCompany::route('/create'),
-            'edit' => Pages\EditCompany::route('/{record}/edit'),
+            'index' => Pages\ListTimesheets::route('/'),
+            'create' => Pages\CreateTimesheet::route('/create'),
+            'edit' => Pages\EditTimesheet::route('/{record}/edit'),
         ];
     }
 }

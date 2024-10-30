@@ -6,5 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class UserLocation extends Model
 {
-    //
+    protected $fillable = [
+        'user_id',
+        'name',
+        'description',
+        'coordinates',
+        'company_id',
+    ];
 }
